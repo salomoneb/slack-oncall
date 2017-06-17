@@ -91,12 +91,13 @@ Functions.renderMessageTemplate = function(users) {
 
 // Posts our message to Slack - uses delayed response webhook so app doesn't timeout https://api.slack.com/slash-commands
 Functions.postToSlack = function(appRequest, appResponse, messageTemplate) {
-  return rp({
+  rp({
     url: appRequest.body.response_url,
     body: messageTemplate,
     json: true,
     method: "POST"
-  }).then(() => {
+  })
+  .then(() => {
     appResponse.end()
   })
 }
