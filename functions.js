@@ -9,7 +9,9 @@ const Functions = {}
 Functions.handleCases = function(appRequest, appResponse) {
   let schedulePromise = cal.schedules
 
-  appResponse.sendStatus(200)
+  appResponse.status(200).json({
+    "text": "Fetching schedules..."
+  })
 
   let userParameter = appRequest.body.text
 
