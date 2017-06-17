@@ -9,10 +9,12 @@ const Functions = {}
 Functions.handleCases = function(appRequest, appResponse) {
   let schedulePromise = cal.schedules
 
-  appResponse.status(200).json({
-    "text": "Fetching schedules..."
-  })
+  // appResponse.status(200).json({
+  //   "text": "Fetching schedules..."
+  // })
 
+  appResponse.sendStatus(204)
+  
   let userParameter = appRequest.body.text
 
   return schedulePromise.then((promiseValue, error) => {
