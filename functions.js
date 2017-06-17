@@ -9,6 +9,8 @@ const Functions = {}
 Functions.handleCases = function(appRequest, appResponse) {
   let schedulePromise = cal.schedules
 
+  appResponse.sendStatus(200)
+
   let userParameter = appRequest.body.text
 
   return schedulePromise.then((promiseValue, error) => {

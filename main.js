@@ -21,7 +21,6 @@ app.post("/cs-slack", (req,res) => {
     res.send("Sorry, there was an error authenticating")
     return
   }
-  res.send("Fetching schedules...")
   
   funcs.handleCases(req, res)
   .then((data, error) => {
