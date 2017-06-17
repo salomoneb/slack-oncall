@@ -1,0 +1,27 @@
+{
+  "name": "cs-slack-oncall",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
+  },
+  "description": "CS on call Slack integration",
+  "main": "main.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "googleapis": "^19.0.0",
+    "moment": "^2.18.1",
+    "ngrok": "^2.2.9",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "response-time": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Salomone Baquis",
+  "license": "ISC"
+}
