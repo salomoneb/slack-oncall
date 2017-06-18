@@ -1,4 +1,3 @@
-const cal = require("./googleAuth.js")
 const funcs = require("./functions.js")
 const bodyParser = require('body-parser')
 const express = require("express")
