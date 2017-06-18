@@ -67,7 +67,7 @@ Functions.getSlackData = function(googleData, error) {
     // For each Slack user name
     for (var i = 0; i < slackPersonInfo.length; i++) {
       // Make sure person hasn't been deleted
-      if (slackPersonInfo[i].deleted !== "true") {
+      if (slackPersonInfo[i].deleted === "false") {
         for (var j = 0; j < 1; j++) {    
           let googleName = googleData[j].name.toLowerCase()
           if (slackName === googleName) {
