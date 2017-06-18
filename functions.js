@@ -66,16 +66,18 @@ Functions.getSlackData = function(googleData, error) {
     let slackPersonInfo = slackData.members
     // For each Slack user name
     for (var i = 0; i < slackPersonInfo.length; i++) {
-      let slackName = slackPersonInfo[i].profile.real_name.toLowerCase()
-      // Loop through the Google cal results to compare the name
-      for (var j = 0; j < 1; j++) {
-        let googleName = googleData[j].name.toLowerCase()
-        // ADD CHECK FOR DELETED USERS
-        if ((slackPersonInfo[i].deleted !== "true") && (slackName === googleName)) {
-          googleData[j].image_url = slackPersonInfo[i].profile.image_72
-          googleData[j].color = slackPersonInfo[i].color  
+      // Make sure person hasn't been deleted
+      if (slackPersonInfo[i].deleted !== "true") {
+        for (var j = 0; j < 1; j++) {    
+          let googleName = googleData[j].name.toLowerCase()
+          if (slackName === googleName) {
+            googleData[j].image_url = slackPersonInfo[i].profile.image_72
+            googleData[j].color = slackPersonInfo[i].color  
+          }
         }
       }
+      let slackName = slackPersonInfo[i].profile.real_name.toLowerCase()
+      // Loop through the Google cal results to compare the name
     }
     return googleData
   })
