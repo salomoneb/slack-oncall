@@ -7,8 +7,8 @@ const Functions = {}
 
 // Retrieves and routes Google calendar data based on user input
 Functions.handleCases = function(appRequest, appResponse) {
+
   appResponse.sendStatus(204)
-  
   let schedulePromise = cal.schedules
 
   // appResponse.status(200).json({
@@ -68,6 +68,8 @@ Functions.getSlackData = function(googleData, error) {
     for (var i = 0; i < slackPersonInfo.length; i++) {
       // Make sure person hasn't been deleted
       if (slackPersonInfo[i].deleted === false) {
+        let slackName = slackPersonInfo[i].profile.real_name.toLowerCase()
+        
         for (var j = 0; j < 1; j++) {    
           let googleName = googleData[j].name.toLowerCase()
           if (slackName === googleName) {
