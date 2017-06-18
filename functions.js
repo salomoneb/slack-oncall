@@ -7,14 +7,14 @@ const Functions = {}
 
 // Retrieves and routes Google calendar data based on user input
 Functions.handleCases = function(appRequest, appResponse) {
+  appResponse.sendStatus(204)
+  
   let schedulePromise = cal.schedules
 
   // appResponse.status(200).json({
   //   "text": "Fetching schedules..."
   // })
 
-  appResponse.sendStatus(204)
-  
   let userParameter = appRequest.body.text
 
   return schedulePromise.then((promiseValue, error) => {
