@@ -1,4 +1,5 @@
 "use strict"
+const cal = require("./googleAuth.js")
 const temps = require("./templates.js")
 const rp = require("request-promise")
 
@@ -6,7 +7,6 @@ const Functions = {}
 
 // Retrieves and routes Google calendar data based on user input
 Functions.handleCases = function(appRequest, appResponse) {
-  const cal = require("./googleAuth.js")
 
   // appResponse.sendStatus(204)
   let schedulePromise = cal.schedules
