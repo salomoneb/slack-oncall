@@ -1,11 +1,11 @@
 // See https://github.com/google/google-api-nodejs-client#making-authenticated-requests
 const google = require("googleapis")
-const OAuth2 = google.auth.OAuth2
 const request = require("request")
 const moment = require("moment")
 const env = require("dotenv").config()
+
+const OAuth2 = google.auth.OAuth2
 let date = new Date()
-let parsedDate = Date.parse(date)
 
 // Set calendar client secrets
 let oauth2Client = new OAuth2(
@@ -44,6 +44,7 @@ let schedules = new Promise ((resolve, reject) => {
       } 
       return info
     })
+    console.log(values)
     resolve(values)
   }) 
 })
