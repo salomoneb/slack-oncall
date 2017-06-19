@@ -10,6 +10,7 @@ Functions.handleCases = function(appRequest, appResponse) {
 
   appResponse.sendStatus(204)
   let schedulePromise = cal.schedules
+  console.log(schedulePromise)
 
   // appResponse.status(200).json({
   //   "text": "Fetching schedules..."

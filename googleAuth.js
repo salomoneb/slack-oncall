@@ -44,7 +44,6 @@ let schedules = new Promise ((resolve, reject) => {
       } 
       return info
     })
-    console.log(values)
     resolve(values)
   }) 
 })
