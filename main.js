@@ -1,3 +1,4 @@
+const funcs = require("./functions.js")
 const bodyParser = require('body-parser')
 const express = require("express")
 
@@ -15,7 +16,6 @@ app.get('/', (req, res) => {
 })
 
 app.post("/cs-slack", (req,res) => {
-  const funcs = require("./functions.js")
   if (req.body.token !== process.env.SLACK_TOKEN) {
     res.send("Sorry, there was an error authenticating.")
     return
